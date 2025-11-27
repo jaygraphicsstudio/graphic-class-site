@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Assignment - Graphic Class Site</title>
+</head>
+<body>
+    <h1>Upload Assignment</h1>
+    <form method="POST" enctype="multipart/form-data">
+        Name: <input type="text" name="student_name" required><br>
+        Module:
+        <select name="module" required>
+            {% for mod in modules %}
+            <option value="{{ mod[0] }}">{{ mod[0] }}</option>
+            {% endfor %}
+        </select><br>
+        File: <input type="file" name="assignment_file" required><br>
+        <button type="submit">Upload</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
